@@ -1,0 +1,25 @@
+{
+  "name": "react-nodebird-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongduu/NodeBird_SNS.git"
+  },
+  "author": "dongduu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongduu/NodeBird_SNS/issues"
+  },
+  "homepage": "https://github.com/dongduu/NodeBird_SNS#readme",
+  "dependencies": {
+    "next": "^9.5.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
