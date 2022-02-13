@@ -1,7 +1,11 @@
-// next를 사용하면 react를 불러오지 않아도 됨
+import AppLayout from "../components/AppLayout";
 
 const Home = () => {
-  return <div>Hello Next!</div>;
+  return (
+    <AppLayout>
+      <div>Hello Next!</div>
+    </AppLayout>
+  );
 };
 
 export default Home;
