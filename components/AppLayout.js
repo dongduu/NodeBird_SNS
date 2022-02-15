@@ -22,7 +22,6 @@ const AppLayout = ({ children }) => {
           </Link>
         </Menu.Item>
       </Menu>
-      <div>공통메뉴</div>
       {children}
     </div>
   );
