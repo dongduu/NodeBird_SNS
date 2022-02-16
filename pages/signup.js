@@ -1,24 +1,28 @@
 import Head from "next/head";
-import { From } from "antd";
+import { Form, Input } from "antd";
+import styled from "styled-components";
 
 import AppLayout from "../components/AppLayout";
 import { useCallback, useState } from "react";
+import useInput from "../hooks/useInput";
+
+const ErrorMessage = styled.div`
+  color: red;
+`;
 
 const Signup = () => {
-  const [id, setId] = useState("");
-  const onChangeId = (e) => {
-    setId(e.target.value);
-  };
-
-  const [nickname, setNickname] = useState("");
-  const onChangeNickname = (e) => {
-    setNickname(e.target.value);
-  };
-
-  const [password, setPassword] = useState("");
-  const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  const [id, onChangeId] = useInput("");
+  const [password, onChangePassword] = useInput("");
+  const [nickname, onChangeNickname] = useInput("");
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordCheck, setPasswordCheck] = useState("");
+  const onChangePasswordCheck = useCallback(
+    (e) => {
+      setPasswordCheck(e.target.value);
+      setPasswordError(e.target.value !== password);
+    },
+    [password]
+  );
 
   const onSubmit = useCallback(() => {
     // onFinish는 내부적으로 e.prevent.default가 자동으로 됨
@@ -64,6 +68,9 @@ const Signup = () => {
               required
               onChange={onChangePasswordCheck}
             />
+            {passwordError && (
+              <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>
+            )}
           </div>
         </Form>
       </AppLayout>
