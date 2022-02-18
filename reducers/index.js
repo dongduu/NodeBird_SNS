@@ -1,34 +1,52 @@
 // initialState 만들기
 const initialState = {
-  name: "dongduu",
-  age: 23,
-  password: "dlehdwn412",
+  user: {
+    isLoggedIn: false,
+    user: null,
+    signUpData: {},
+    loginData: {},
+  },
+  post: {
+    mainPosts: [],
+  },
 };
 
 // action 만들기
-const changeNickname = (data) => {
+export const loginAction = (data) => {
   return {
-    type: "CHANGE_NICKNAME",
+    type: "LOG_IN",
     data,
   };
 };
 
-// action 사용
-changeNickname("leedongjoo");
-// {
-//     type: "CHANGE_NICKNAME",
-//     data: 'leedongjoo'
-// }
-store.dispatch(changeNickname("dj"));
+export const logoutAction = () => {
+  return {
+    type: "LOG_OUT",
+    data,
+  };
+};
 
 // reducer 만들기(함수)
 // (이전상태, 액션) => 다음상태
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CHANGE_NICKNAME":
+    case "LOG_IN":
       return {
         ...state,
-        name: action.data,
+        user: {
+          ...state.user,
+          isLoggedIn: true,
+          user: action.data,
+        },
+      };
+    case "LOG_OUT":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          isLoggedIn: false,
+          user: null,
+        },
       };
   }
 };
