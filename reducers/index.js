@@ -28,7 +28,6 @@ export const logoutAction = () => {
 };
 
 // reducer 만들기(함수)
-// (이전상태, 액션) => 다음상태
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case HYDRATE:
