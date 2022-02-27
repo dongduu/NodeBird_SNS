@@ -9,8 +9,11 @@ import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import Avatar from "antd/lib/avatar/avatar";
 import PostImages from "./PostImages";
+import { useState } from "react";
 
 const PostCard = ({ post }) => {
+  const [liked, setLiked] = useState(false);
+  const [commentFormOpened, setCommentFormOpened] = useState(false);
   const { me } = useSelector((state) => state.user);
   const id = me && me.id;
   return (
