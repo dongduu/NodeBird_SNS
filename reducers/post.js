@@ -11,7 +11,7 @@ export const initialState = {
         nickname: "동두",
       },
       content: "첫 번째 게시글 #해시태그 #익스프레스", // 게시글 자체 속성
-      Image: [
+      Images: [
         // 다른 정보들과 합쳐서 줌
         {
           src: "https://postfiles.pstatic.net/MjAyMTA2MjlfMTU3/MDAxNjI0ODk2NDkwMDgz.Q9lKbK2zgM5FWQGKDhaHVcT2zMqVZKzdeW601i9rEIAg.Egv79qTFYRSPHqqIMV50T-AMoBlm0iWNPLudoEZbfncg.JPEG.4012popo/20210108_143447.jpg?type=w966",
