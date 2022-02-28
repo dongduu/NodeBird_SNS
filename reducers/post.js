@@ -23,7 +23,7 @@ export const initialState = {
           src: "https://postfiles.pstatic.net/MjAyMTA2MjlfNjYg/MDAxNjI0ODk2NTE0NTc0.cYcUet2ac_ceeCuFGzMzXfd-1jxmvtgU8jDVxMqqZicg.koXU3Kuww7tCOtzOWR8b7PH11QIG80tcc9MgFfrmltwg.JPEG.4012popo/IMG_0429.jpg?type=w966",
         },
       ],
-      Conments: [
+      Comments: [
         {
           // 다른 정보들과 합쳐서 줌
           User: {
