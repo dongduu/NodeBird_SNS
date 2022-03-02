@@ -14,14 +14,14 @@ export const initialState = {
       Images: [
         // 다른 정보들과 합쳐서 줌
         {
-          src: "https://postfiles.pstatic.net/MjAyMTA2MjlfMTU3/MDAxNjI0ODk2NDkwMDgz.Q9lKbK2zgM5FWQGKDhaHVcT2zMqVZKzdeW601i9rEIAg.Egv79qTFYRSPHqqIMV50T-AMoBlm0iWNPLudoEZbfncg.JPEG.4012popo/20210108_143447.jpg?type=w966",
+          src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
         },
-        {
-          src: "https://postfiles.pstatic.net/MjAyMTA2MjlfMTgy/MDAxNjI0ODk2NDkzNDgz.U7_npqKuy1jx_Dr2escVxRLHNWheUq0ALFUuFQxW4ZIg.63wI-NGWjr1Qdicn6xUxMhazohOTT97uWUO0SidY9W0g.JPEG.4012popo/20210127_185449.jpg?type=w966",
-        },
-        {
-          src: "https://postfiles.pstatic.net/MjAyMTA2MjlfNjYg/MDAxNjI0ODk2NTE0NTc0.cYcUet2ac_ceeCuFGzMzXfd-1jxmvtgU8jDVxMqqZicg.koXU3Kuww7tCOtzOWR8b7PH11QIG80tcc9MgFfrmltwg.JPEG.4012popo/IMG_0429.jpg?type=w966",
-        },
+        // {
+        //   src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
+        // },
+        // {
+        //   src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
+        // },
       ],
       Comments: [
         {
