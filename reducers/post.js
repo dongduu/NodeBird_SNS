@@ -1,18 +1,13 @@
-// 순서
-// 이니셜데이터 구성 => 액션 구성(리듀서 작성) =>
-
 export const initialState = {
   mainPosts: [
     {
-      id: 1, // 게시글 자체 속성
+      id: 1,
       User: {
-        // 다른 정보들과 합쳐서 줌
         id: 1,
         nickname: "동두",
       },
-      content: "첫 번째 게시글 #해시태그 #익스프레스", // 게시글 자체 속성
+      content: "첫 번째 게시글 #해시태그 #익스프레스",
       Images: [
-        // 다른 정보들과 합쳐서 줌
         {
           src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
         },
@@ -25,7 +20,6 @@ export const initialState = {
       ],
       Comments: [
         {
-          // 다른 정보들과 합쳐서 줌
           User: {
             nickname: "nero",
           },
@@ -40,8 +34,8 @@ export const initialState = {
       ],
     },
   ],
-  imagePaths: [], // 이미지를 업로드 할 때 이미지 경로가 추가 될 것
-  postAdded: false, // 게시글 추가가 완료되면 true로 바뀜
+  imagePaths: [],
+  postAdded: false,
 };
 
 const ADD_POST = "ADD_POST";
@@ -64,7 +58,7 @@ const reducer = (state = initialState, action) => {
     case ADD_POST:
       return {
         ...state,
-        mainPosts: [dummmyPost, ...state.mainPosts], // 앞에 추가해야 게시글이 위로 올라옴
+        mainPosts: [dummmyPost, ...state.mainPosts],
         postAdded: true,
       };
     default:
