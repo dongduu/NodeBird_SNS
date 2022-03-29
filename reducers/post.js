@@ -12,10 +12,10 @@ export const initialState = {
           src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
         },
         {
-          src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
+          src: "https://bimage.interpark.com/goods_image/8/3/4/5/351458345g.jpg",
         },
         {
-          src: "https://cdn.inflearn.com/public/files/courses/325637/b3dcddbc-f6c2-4c35-a1ae-350af347616e/325637-0.png",
+          src: "https://bimage.interpark.com/partner/goods_image/3/5/5/2/339153552g.jpg",
         },
       ],
       // 깃허브 연습
