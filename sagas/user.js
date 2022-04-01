@@ -1,4 +1,11 @@
-import { all, fork, put, delay, takeLatest } from "redux-saga/effects";
+import {
+  all,
+  fork,
+  put,
+  delay,
+  takeLatest,
+  actionChannel,
+} from "redux-saga/effects";
 
 function logInAPI() {
   return axios.post("/api/login");
@@ -10,6 +17,7 @@ function* logIn() {
     yield delay(1000);
     yield put({
       type: "LOG_IN_SUCCESS",
+      data: action.data,
     });
   } catch (err) {
     yield put({ type: "LOG_IN_FAILURE", data: err.response.data });
