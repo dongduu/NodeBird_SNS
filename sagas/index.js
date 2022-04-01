@@ -1,8 +1,19 @@
-import { all, fork, put, take } from "redux-saga/effects";
+import {
+  all,
+  fork,
+  put,
+  takeLatest,
+  throttle,
+  delay,
+} from "redux-saga/effects";
 import axios from "axois";
 
 // fork - 비동기 함수 호출
 // call - 동기 함수 호출
+// take - 한번만 가져옴
+// takeEvery - 클릭할 때마다 가져옴
+// takeLatest - 마지막으로 누른 것만 인식하고 가져옴(백엔드 상에서는 인식할 수가 없어서 문제)
+// throttle - 시간을 지정해서 그 시간 동안 한번만 가져옴
 
 function logInAPI() {
   return axios.post("/api/login");
@@ -10,7 +21,8 @@ function logInAPI() {
 
 function* logIn() {
   try {
-    const result = yield fork(logInAPI);
+    // const result = yield fork(logInAPI);
+    yield delay(1000);
     yield put({
       type: "LOG_IN_SUCCESS",
       data: result.data,
@@ -26,7 +38,8 @@ function logOutAPI() {
 
 function* logOut() {
   try {
-    const result = yield fork(logOutAPI);
+    // const result = yield fork(logOutAPI);
+    yield delay(1000);
     yield put({
       type: "LOG_OUT_SUCCESS",
       data: result.data,
@@ -42,7 +55,8 @@ function addPostAPI() {
 
 function* addPost() {
   try {
-    const result = yield fork(addPostAPI);
+    // const result = yield fork(addPostAPI);
+    yield delay(1000);
     yield put({
       type: "ADD_POST_SUCCESS",
       data: result.data,
@@ -54,15 +68,15 @@ function* addPost() {
 
 function* watchLogIn() {
   // 각각의 이벤트 리스너 역할
-  yield take("LOG_IN_REQUEST", logIn);
+  yield takeLatest("LOG_IN_REQUEST", logIn);
 }
 
 function* watchLogOut() {
-  yield take("LOG_OUT_REQUEST", logOut);
+  yield takeLatest("LOG_OUT_REQUEST", logOut);
 }
 
 function* watchAddPost() {
-  yield take("ADD_POST_REQUEST", addPost);
+  yield throttle("ADD_POST_REQUEST", addPost, 2000);
 }
 
 export default function* rootSaga() {
