@@ -39,10 +39,14 @@ export const initialState = {
   postAdded: false,
 };
 
-const ADD_POST = "ADD_POST";
-export const addPost = {
-  type: ADD_POST,
-};
+export const ADD_POST_REQUEST = "ADD_POST_REQUEST";
+export const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
+export const ADD_POST_FAILURE = "ADD_POST_FAILURE";
+
+export const addPost = (data) => ({
+  type: ADD_POST_REQUEST,
+  data,
+});
 const dummmyPost = {
   id: 2,
   content: "더미데이터입니다.",
@@ -56,12 +60,14 @@ const dummmyPost = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
+    case ADD_POST_REQUEST:
+    case ADD_POST_SUCCESS:
       return {
         ...state,
         mainPosts: [dummmyPost, ...state.mainPosts],
         postAdded: true,
       };
+    case ADD_POST_FAILURE:
     default:
       return state;
   }
