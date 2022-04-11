@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { Menu, Input, Row, Col } from "antd";
-import { useState } from "react";
 import styled from "styled-components";
 
 import UserProfile from "../components/UserProfile";
@@ -13,7 +12,7 @@ const SearchInput = styled(Input.Search)`
 `;
 
 const AppLayout = ({ children }) => {
-  const { me } = useSelector((state) => state.user.isLoggedIn);
+  const { me } = useSelector((state) => state.user);
   return (
     <div>
       <Menu mode="horizontal">
